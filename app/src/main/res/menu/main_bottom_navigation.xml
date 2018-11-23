@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/menu_motivasi"
+            android:icon="@drawable/book"
+            android:title="Motivasi"
+    />
+
+    <item
+            android:id="@+id/menu_kesehatan"
+            android:icon="@drawable/hospital"
+            android:title="Kesehatan"
+    />
+
+    <item
+            android:id="@+id/menu_progress"
+            android:icon="@drawable/progress_clock"
+            android:title="Progress"
+    />
+
+    <item
+            android:id="@+id/menu_tabungan"
+            android:icon="@drawable/cash_multiple"
+            android:title="Tabungan"
+    />
+
+    <item
+            android:id="@+id/menu_prestasi"
+            android:icon="@drawable/trophy_award"
+            android:title="Prestasi"
+    />
+
+</menu>

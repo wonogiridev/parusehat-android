@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+>
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDarker"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
+
+        <TextView
+                android:id="@+id/main_tv_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_italic"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="ParuSehat"
+        />
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+            android:id="@+id/main_frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_main_activity"
+            android:layout_above="@+id/main_bottom_navigation"
+    />
+
+    <android.support.design.widget.BottomNavigationView
+            android:id="@+id/main_bottom_navigation"
+            android:theme="@style/customFontBottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemBackground="@android:color/white"
+            app:menu="@menu/main_bottom_navigation"
+            android:layout_alignParentBottom="true"
+    >
+    </android.support.design.widget.BottomNavigationView>
+</RelativeLayout>
