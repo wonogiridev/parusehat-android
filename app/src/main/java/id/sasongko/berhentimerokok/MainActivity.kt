@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     exitAnimation = android.R.anim.fade_out
                 )
                 return true
+
             }
             R.id.menu_kesehatan -> {
                 replaceFragmentSafely(
