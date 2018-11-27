@@ -18,7 +18,7 @@ class SplashScreen : AppCompatActivity() {
         sharedPreferenceApps = SharedPreferenceApps(this)
 
         if(sharedPreferenceApps.firstTime.equals("yes",true)){
-            val intent = Intent(applicationContext,WelcomeActivity::class.java)
+            val intent = Intent(applicationContext,DateTimePickerActivity::class.java)
             startActivity(intent)
             finish()
         }else{

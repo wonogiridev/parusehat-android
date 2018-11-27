@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".AddMotivasiActivity">
         </activity>
+        <activity android:name=".DateTimePickerActivity">
+        </activity>
     </application>
 
 </manifest>
