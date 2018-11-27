@@ -10,7 +10,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
         </activity>
         <activity android:name=".WelcomeActivity">
         </activity>
@@ -20,6 +19,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".BerbagiInspirasiActivity">
+        </activity>
+        <activity android:name=".AddMotivasiActivity">
         </activity>
     </application>
 

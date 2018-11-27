@@ -67,17 +67,17 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 )
                 return true
             }
-            R.id.menu_tabungan -> {
-                replaceFragmentSafely(
-                    fragment = TabunganFragment(),
-                    tag = TAG_FRAGMENT_TABUNGAN,
-                    containerViewId = R.id.main_frame_container,
-                    enterAnimation = android.R.anim.fade_in,
-                    exitAnimation = android.R.anim.fade_out
-                )
-                return true
-            }
-            R.id.menu_prestasi -> {
+//            R.id.menu_tabungan -> {
+//                replaceFragmentSafely(
+//                    fragment = TabunganFragment(),
+//                    tag = TAG_FRAGMENT_TABUNGAN,
+//                    containerViewId = R.id.main_frame_container,
+//                    enterAnimation = android.R.anim.fade_in,
+//                    exitAnimation = android.R.anim.fade_out
+//                )
+//                return true
+//            }
+            R.id.menu_inspirasi -> {
                 replaceFragmentSafely(
                     fragment = PrestasiFragment(),
                     tag = TAG_FRAGMENT_PRESTASI,

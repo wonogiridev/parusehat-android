@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+            android:id="@+id/menu_progress"
+            android:icon="@drawable/progress_clock"
+            android:title="Progress"
+    />
+
+    <item
             android:id="@+id/menu_motivasi"
             android:icon="@drawable/book"
             android:title="Motivasi"
@@ -13,22 +19,16 @@
             android:title="Kesehatan"
     />
 
-    <item
-            android:id="@+id/menu_progress"
-            android:icon="@drawable/progress_clock"
-            android:title="Progress"
-    />
+    <!--<item-->
+            <!--android:id="@+id/menu_tabungan"-->
+            <!--android:icon="@drawable/cash_multiple"-->
+            <!--android:title="Tabungan"-->
+    <!--/>-->
 
     <item
-            android:id="@+id/menu_tabungan"
-            android:icon="@drawable/cash_multiple"
-            android:title="Tabungan"
-    />
-
-    <item
-            android:id="@+id/menu_prestasi"
+            android:id="@+id/menu_inspirasi"
             android:icon="@drawable/trophy_award"
-            android:title="Prestasi"
+            android:title="Inspirasi"
     />
 
 </menu>
