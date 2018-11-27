@@ -15,6 +15,14 @@ constructor(context: Context) {
     val timeStart: String?
         get() = sharedPreferences.getString(Constanta.TIME_START, "0")
 
+    val harga: String?
+        get() = sharedPreferences.getString(Constanta.HARGA, "0")
+    val banyakRoko: String?
+        get() = sharedPreferences.getString(Constanta.BANYAK_ROKOK, "0")
+
+    val isiRoko: String?
+        get() = sharedPreferences.getString(Constanta.ISI_PERPACK, "0")
+
 
     init {
         this.editor = sharedPreferences.edit()

@@ -47,10 +47,15 @@ class ProgressFragment : Fragment() {
         currentTime = formattedDate.toLong()
         seconds = currentTime - sharedPreferenceApps.timeStart!!.toLong()
         val handler = Handler()
-
-        cigaretteUse = ((cigaretteCount / 24 ) / 3600).toFloat()
+        cigaretteCount = sharedPreferenceApps.banyakRoko!!.toInt()
+        cigarettePerPack = sharedPreferenceApps.isiRoko!!.toInt()
+        cigarettePrice = sharedPreferenceApps.harga!!.toFloat()
+        cigaretteUse = ((cigaretteCount.toFloat() / 24 ) / 3600)
         cigaretterPerBatang = cigarettePrice / cigarettePerPack
-
+        Log.d("isi data",cigarettePerPack.toString())
+        Log.d("isi data 2",cigarettePrice.toString())
+        Log.d("isi data 3",cigaretteCount.toString())
+        Log.d("isi data 3",cigaretteUse.toString())
 
         val runnableCode = object : Runnable {
             @SuppressLint("SetTextI18n")

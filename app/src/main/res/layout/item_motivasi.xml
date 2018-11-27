@@ -31,6 +31,7 @@
                     android:src="@drawable/delete_circle_outline"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"
+                    android:visibility="gone"
                     android:layout_marginRight="8dp"
                     app:layout_constraintTop_toTopOf="@+id/itemMotivasiNomor"
                     app:layout_constraintBottom_toBottomOf="@+id/itemMotivasiNomor" />
