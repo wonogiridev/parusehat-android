@@ -24,10 +24,18 @@ class ProgressFragment : Fragment() {
 
     private var currentTime = 0L
     private var seconds = 0L
-    private var formattedDate =""
+    private var cigaretteCount = 86400
+    private var cigaretteUse = 0F
+    private var cigarettePerPack = 12
+    private var cigaretterPerBatang = 0f
+    private var cigarettePrice = 12000f
+    private var pricePerSecond = 0f
+    private var formattedDate = ""
     private lateinit var sharedPreferenceApps: SharedPreferenceApps
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_progress, container, false)
 
@@ -37,16 +45,27 @@ class ProgressFragment : Fragment() {
 
 
         currentTime = formattedDate.toLong()
-        seconds = currentTime -  sharedPreferenceApps.timeStart!!.toLong()
-        val handler= Handler()
+        seconds = currentTime - sharedPreferenceApps.timeStart!!.toLong()
+        val handler = Handler()
+
+        cigaretteUse = ((cigaretteCount / 24 ) / 3600).toFloat()
+        cigaretterPerBatang = cigarettePrice / cigarettePerPack
 
 
-        val runnableCode = object: Runnable {
+        val runnableCode = object : Runnable {
+            @SuppressLint("SetTextI18n")
             override fun run() {
-
                 seconds += 1000
-                Log.d("waktu",seconds.toString())
+
+                //set cigate
+                val cigaretteTemp = cigaretteUse * (seconds/1000)
+                pricePerSecond = cigaretteTemp * cigaretterPerBatang
+                view?.fragmentProgressTvRokok?.text = "$cigaretteTemp Batang"
+                view?.fragmentProgressTvUang?.text = "Rp $pricePerSecond"
+
+                //set time
                 timeString(seconds)
+                timeStringHope(cigaretteTemp.toLong() * 660000)
                 handler.postDelayed(this, 1000)
             }
         }
@@ -54,6 +73,7 @@ class ProgressFragment : Fragment() {
         runnableCode.run()
         return view
     }
+
     @SuppressLint("SimpleDateFormat")
     fun getCurrentTimeUsingDate() {
 
@@ -67,9 +87,9 @@ class ProgressFragment : Fragment() {
 
 
     @SuppressLint("SetTextI18n")
-    private fun timeString(millisUntilFinished:Long){
+    private fun timeString(millisUntilFinished: Long) {
 
-        var millisUntilFinish:Long = millisUntilFinished
+        var millisUntilFinish: Long = millisUntilFinished
         val days = TimeUnit.MILLISECONDS.toDays(millisUntilFinish)
         millisUntilFinish -= TimeUnit.DAYS.toMillis(days)
 
@@ -82,8 +102,29 @@ class ProgressFragment : Fragment() {
         val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinish)
 
 
+
         view?.fragmentProgressTvBebas?.text = "$days h : $hours j : $minutes m : $seconds s"
 
     }
 
+    @SuppressLint("SetTextI18n")
+    private fun timeStringHope(millisUntilFinished: Long) {
+
+        var millisUntilFinish: Long = millisUntilFinished
+        val days = TimeUnit.MILLISECONDS.toDays(millisUntilFinish)
+        millisUntilFinish -= TimeUnit.DAYS.toMillis(days)
+
+        val hours = TimeUnit.MILLISECONDS.toHours(millisUntilFinish)
+        millisUntilFinish -= TimeUnit.HOURS.toMillis(hours)
+
+        val minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinish)
+        millisUntilFinish -= TimeUnit.MINUTES.toMillis(minutes)
+
+        val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinish)
+
+
+
+        view?.fragmentProgressTvWaktu?.text = "$days h : $hours j : $minutes m : $seconds s"
+
+    }
 }
