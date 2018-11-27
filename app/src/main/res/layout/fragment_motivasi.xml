@@ -8,4 +8,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_motivasi"/>
+    <android.support.design.widget.FloatingActionButton android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:id="@+id/fragmentMotivasiFab"
+                                                        android:layout_gravity="bottom|right"
+                                                        android:layout_margin="10dp"
+    />
 </FrameLayout>

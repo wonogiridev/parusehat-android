@@ -16,6 +16,7 @@ class AddMotivasiActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_motivasi)
         addMotivasiBtnTambah.setOnClickListener {
             addMotivasi(addMotivasiEt.text.toString())
+            finish()
         }
     }
 
